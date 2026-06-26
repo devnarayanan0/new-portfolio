@@ -238,7 +238,59 @@ export default function MinimalTemplate({ profile }: MinimalTemplateProps) {
   };
 
   return (
-    <div className="relative min-h-screen bg-gray-50 bg-[radial-gradient(#e5e7eb_1.5px,transparent_1.5px)] [background-size:24px_24px] text-black font-sans antialiased overflow-y-auto selection:bg-black selection:text-white p-4 md:p-8 flex flex-col items-center justify-center">
+    <div className="relative min-h-screen bg-neutral-100 text-black font-sans antialiased overflow-x-hidden selection:bg-black selection:text-white p-4 md:p-8 flex flex-col items-center justify-center">
+      {/* BACKGROUND FLOATING BRAND LOGOS */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        {/* Azure Logo */}
+        <div className="absolute top-12 left-[10%] w-48 h-48 opacity-15 blur-[2px] animate-pulse transition-all duration-[6000ms]">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="text-sky-500 w-full h-full">
+            <path d="M5.4 19L1.2 13.1H9.2L5.4 19ZM11.1 19L16.2 11.2H8.4L3.8 19H11.1ZM12.7 19H22.8L15.3 5L12.7 19Z" />
+          </svg>
+        </div>
+
+        {/* AWS Logo */}
+        <div className="absolute top-[25%] right-[8%] w-56 h-56 opacity-15 blur-[1px] animate-pulse transition-all duration-[8000ms]">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="text-amber-500 w-full h-full">
+            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11.23 15.65C9.72 15.65 8.78 14.86 8.78 13.56C8.78 12.06 10.05 11.28 12.33 11.24C12.33 11.24 13.43 11.23 13.8 11.22V10.65C13.8 9.87 13.11 9.38 12.03 9.38C10.97 9.38 10.08 9.77 9.54 10.15L8.93 8.75C9.8 8.1 11.14 7.65 12.64 7.65C14.73 7.65 15.93 8.68 15.93 10.64V15.5H13.93V14.5C13.2 15.28 12.09 15.65 11.23 15.65Z" />
+          </svg>
+        </div>
+
+        {/* Docker Logo */}
+        <div className="absolute top-[45%] left-[5%] w-64 h-64 opacity-15 blur-[1px] animate-bounce duration-[12000ms]">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="text-cyan-500 w-full h-full">
+            <path d="M13.983 8.871h-1.996v1.985h1.996V8.871zM13.983 6.327h-1.996v1.982h1.996V6.327zM16.485 8.871h-1.995v1.985h1.995V8.871zM16.485 6.327h-1.995v1.982h1.995V6.327zM11.478 8.871h-1.995v1.985h1.995V8.871zM11.478 6.327H9.483v1.982h1.995V6.327zM8.977 8.871H6.98v1.985h1.997V8.871zM13.983 3.78h-1.996V5.76h1.996V3.78zm10.016 8.121c-.326-.067-.624-.093-.913-.093-1.21 0-2.234.82-2.492 1.933a3.832 3.832 0 01-3.664-2.583h-1.53v2.83H1.417c-.12 1.15.54 2.22 1.63 2.62 1.09.4 2.3-.08 2.83-1.12.53 1.04 1.74 1.52 2.83 1.12 1.09-.4 1.75-1.47 1.63-2.62V13.8h2.008v1.982h2.518V13.8h1.22c.264 1.11 1.288 1.93 2.492 1.93.289 0 .587-.03.913-.1a3.87 3.87 0 001.272 2.146c1.196.953 2.921.905 4.07-.123a3.81 3.81 0 001.144-2.825c0-1.848-1.512-3.111-3.616-3.111z" />
+          </svg>
+        </div>
+
+        {/* Kubernetes Logo */}
+        <div className="absolute top-[60%] right-[10%] w-52 h-52 opacity-15 blur-[2px] animate-spin duration-[24000ms]">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="text-blue-500 w-full h-full">
+            <path d="M12.01 2.25L3.84 5.92L2.25 14.1L8.38 21.75L15.65 21.75L21.78 14.1L20.21 5.92L12.01 2.25ZM12.01 5L17.79 7.6L18.9 13.35L14.62 18.7H9.41L5.12 13.35L6.24 7.6L12.01 5ZM12.01 9.38A2.63 2.63 0 1 0 12.01 14.63A2.63 2.63 0 0 0 12.01 9.38Z" />
+          </svg>
+        </div>
+
+        {/* Spring Boot Logo */}
+        <div className="absolute bottom-[15%] left-[8%] w-44 h-44 opacity-15 blur-[1px] animate-pulse">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="text-emerald-500 w-full h-full">
+            <path d="M12 2C6.48 2 2 6.48 2 12c0 3.73 2.04 6.98 5.08 8.7l.1-.06c.55-.35.91-.97.91-1.67V17c0-1.1.9-2 2-2h4c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2h-2V4.5c0-.83-.67-1.5-1.5-1.5zM12 11c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
+          </svg>
+        </div>
+
+        {/* LangChain (Chain Icon / Multi-nodes) */}
+        <div className="absolute bottom-[28%] right-[15%] w-48 h-48 opacity-15 blur-[2px]">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="text-emerald-600 w-full h-full">
+            <path d="M17 7h-4v2h4c1.65 0 3 1.35 3 3s-1.35 3-3 3h-4v2h4c2.76 0 5-2.24 5-5s-2.24-5-5-5zm-6 8H7c-1.65 0-3-1.35-3-3s1.35-3 3-3h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-2zm-3-4h8v2H8z" />
+          </svg>
+        </div>
+
+        {/* Foundry (Anvil / Heavy Industry Hammer) */}
+        <div className="absolute top-[40%] right-[40%] w-40 h-40 opacity-15 blur-[3px]">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="text-zinc-600 w-full h-full">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
+          </svg>
+        </div>
+      </div>
+
       {/* Dynamic top scroll status */}
       <motion.div 
         id="scroll-bar"
@@ -246,8 +298,8 @@ export default function MinimalTemplate({ profile }: MinimalTemplateProps) {
         style={{ scaleX }}
       />
 
-      {/* Main geometric canvas frame wrapping everything with high-contrast translucent glass effect */}
-      <div className="w-full max-w-7xl border-8 border-black bg-white/80 backdrop-blur-xl flex flex-col justify-between min-h-[calc(100vh-4rem)] relative shadow-2xl shadow-black/10">
+      {/* Main geometric canvas frame wrapping everything with a highly glossy translucent glass effect */}
+      <div className="w-full max-w-7xl border-8 border-black bg-white/70 backdrop-blur-3xl flex flex-col justify-between min-h-[calc(100vh-4rem)] relative z-10 shadow-[0_0_80px_rgba(0,0,0,0.15)] rounded-sm">
         
         {/* ================= HEADER SECTION ================= */}
         <header className="flex flex-col lg:flex-row justify-between items-start lg:items-end p-8 md:p-10 border-b-4 border-black gap-6 bg-white/40">
