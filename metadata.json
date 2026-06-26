@@ -1,0 +1,6 @@
+{
+  "name": "Minimalist Portfolio Builder & Templates",
+  "description": "A sleek, professional portfolio designed with geometric balance, custom grid layouts, and high-contrast typography.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
