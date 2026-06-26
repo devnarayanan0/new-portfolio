@@ -5,13 +5,13 @@ export const PRESETS: Record<string, UserProfile> = {
     name: "Dev Narayanan",
     role: "Backend Developer & ML Engineer",
     tagline: "Developing innovative solutions with a passion for exploration.",
-    bio: "I am a developer based in India. I enjoy programming and exploring technology. I've participated in 10+ hackathons & ideathons, and have a passion for building innovative solutions.",
+    bio: "I enjoy programming and exploring technology. I've participated in 10+ hackathons & ideathons, and have a passion for building innovative solutions.",
     email: "devnarayananmp@outlook.com",
     phone: "7200176502",
     github: "github.com/devnarayanan0",
     linkedin: "linkedin.com/in/devnarayanan0",
-    leetcode: "leetcode.com/devnarayanan0",
-    twitter: "x.com/dev_narayanan0",
+    leetcode: "leetcode.com/u/devnarayanan0",
+    twitter: "x.com/idevash_",
     calComUrl: "https://cal.com/devnarayanan0",
     education: [
       {
@@ -45,7 +45,7 @@ export const PRESETS: Record<string, UserProfile> = {
         duration: "04/2026 – 06/2026",
         location: "IITMRP",
         bullets: [
-          "Built GenAI applications using LLMs, Multi-model Agents, and RAG architectures, backed by an optimized MLOps pipeline for efficient model deployment and shipment.",
+          "Built GenAI applications using LLMs, multi-model agents, and RAG architectures, backed by an optimized MLOps pipeline for efficient model deployment.",
           "Automated model retraining workflows, reducing retraining time and deployment turnaround by 14%."
         ]
       },
@@ -62,11 +62,15 @@ export const PRESETS: Record<string, UserProfile> = {
     skills: [
       {
         categoryName: "Cloud & Devops",
-        skills: ["Azure", "AWS", "Docker", "Kubernetes", "Jenkins", "GitHub Actions"]
+        skills: ["Azure", "AWS", "GCP", "Docker", "Kubernetes", "Jenkins", "GitHub Actions"]
       },
       {
         categoryName: "AI Engineering & ML",
         skills: ["LLMs", "LangChain", "VectorDB", "TensorFlow", "Keras", "Pandas", "Numpy"]
+      },
+      {
+        categoryName: "Systems & Concurrency",
+        skills: ["Distributed Systems", "Multi-threading", "Concurrency", "System Design", "Debugging & Profiling"]
       },
       {
         categoryName: "Frameworks & Technologies",
@@ -75,10 +79,6 @@ export const PRESETS: Record<string, UserProfile> = {
       {
         categoryName: "Programming Languages",
         skills: ["Java", "C++", "Python", "Go", "JavaScript", "TypeScript"]
-      },
-      {
-        categoryName: "Systems & Concurrency",
-        skills: ["Distributed Systems", "Multi-threading", "Concurrency", "System Design", "Debugging & Profiling"]
       },
       {
         categoryName: "CS Fundamentals",
@@ -135,6 +135,11 @@ export const PRESETS: Record<string, UserProfile> = {
         date: "09/2025"
       },
       {
+        title: "AWS Emerging Talent Community",
+        details: "Active member, contributing to cloud computing development and multi-cloud learning architectures.",
+        date: "Ongoing"
+      },
+      {
         title: "InnovAItion : DAIICT",
         details: "Finalist (Fintech track) – engineered fintech analytics models for real-time anomaly detection.",
         date: "01/2026"
@@ -143,11 +148,6 @@ export const PRESETS: Record<string, UserProfile> = {
         title: "Hackwise 2026 : IIM–Indore",
         details: "Finalist, ranked in the Top 10 out of 2,500 teams across India.",
         date: "12/2025"
-      },
-      {
-        title: "AWS Emerging Talent Community",
-        details: "Active member, contributing to cloud computing development and multi-cloud learning architectures.",
-        date: "Ongoing"
       }
     ]
   }
