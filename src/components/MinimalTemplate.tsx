@@ -333,7 +333,7 @@ export default function MinimalTemplate({ profile }: MinimalTemplateProps) {
                   <div className="absolute inset-0 bg-black translate-x-2 translate-y-2 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
                   <div className="relative w-36 h-36 border-4 border-black bg-neutral-200 overflow-hidden flex items-center justify-center">
                     <img 
-                      src="/avatar.jpg" 
+                      src="/avatar.jpeg" 
                       alt="Dev Narayanan" 
                       className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
                       onError={(e) => {
