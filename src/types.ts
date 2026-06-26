@@ -58,6 +58,7 @@ export interface UserProfile {
   github: string;
   linkedin: string;
   leetcode: string;
+  twitter?: string;
   calComUrl: string;
   education: Education[];
   experience: Experience[];

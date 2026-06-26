@@ -321,84 +321,96 @@ export default function MinimalTemplate({ profile }: MinimalTemplateProps) {
         {/* ================= INTRO & ABOUT SECTION ================= */}
         <section id="about" className="grid grid-cols-1 lg:grid-cols-12 border-b-4 border-black bg-white/40">
           {/* Left Column (Bio statement & details) */}
-          <div className="lg:col-span-7 p-8 md:p-10 border-b border-black lg:border-b-0 lg:border-r border-black flex flex-col justify-between gap-12 bg-white/50">
+          <div className="lg:col-span-7 p-8 md:p-10 border-b border-black lg:border-b-0 lg:border-r border-black flex flex-col justify-center gap-6 bg-white/50">
             <div className="space-y-6">
               <div className="inline-block border border-black px-3 py-1 text-[10px] font-bold tracking-widest uppercase">
                 Featured Ethos
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[0.95] tracking-tighter uppercase">
-                ARCHITECTING THE FUTURE OF SCALABLE SYSTEMS.
-              </h2>
-              <p className="text-sm md:text-base leading-relaxed opacity-90 max-w-xl font-medium">
-                {profile.bio}
-              </p>
-
-              {/* Action Buttons */}
-              <div className="pt-4 flex flex-wrap gap-4">
-                <a 
-                  href="#booking" 
-                  className="inline-flex items-center gap-2 border-4 border-black bg-black text-white px-6 py-3 text-xs font-mono font-black uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1"
-                >
-                  Book A Session <Calendar className="w-4 h-4 ml-1" />
-                </a>
-                <a 
-                  href="/resume.pdf" 
-                  download="Dev_Narayanan_Resume.pdf"
-                  className="inline-flex items-center gap-2 border-4 border-black bg-white text-black px-6 py-3 text-xs font-mono font-black uppercase tracking-wider hover:bg-black hover:text-white transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1"
-                >
-                  Download Resume <FileText className="w-4 h-4 ml-1" />
-                </a>
-              </div>
-            </div>
-
-            {/* Quick Stats Grid without Leetcode stats */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-6 border-t border-black/10">
-              <div>
-                <span className="block text-[10px] font-mono uppercase opacity-50 font-bold">[01] Specialization</span>
-                <span className="text-xl font-black tracking-tight uppercase">High Concurrency</span>
-              </div>
-              <div>
-                <span className="block text-[10px] font-mono uppercase opacity-50 font-bold">[02] Scale Level</span>
-                <span className="text-xl font-black tracking-tight uppercase">10K+ File syncs</span>
-              </div>
-              <div>
-                <span className="block text-[10px] font-mono uppercase opacity-50 font-bold">[03] Core Focus</span>
-                <span className="text-xl font-black tracking-tight uppercase">Distributed & ML</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column (Bio Summary & Digital Directories) */}
-          <div className="lg:col-span-5 flex flex-col justify-between bg-white/20">
-            <div className="p-8 md:p-10 border-b border-black space-y-6">
-              <div className="inline-block border border-black px-3 py-1 text-[10px] font-bold tracking-widest uppercase bg-white">
-                Professional Digest
-              </div>
               
-              <div className="space-y-4">
-                <h3 className="text-xl font-black uppercase tracking-tight">Summary Profile</h3>
-                <p className="text-xs md:text-sm leading-relaxed opacity-80 font-medium">
-                  Dev Narayanan is a systems-focused developer engineering robust database state-synchronization platforms, modern natural language vector pipelines, and highly concurrent service architectures. Experienced in microservices, secure authorization, and containerized workflows.
-                </p>
-                <div className="border-t border-black/10 pt-4 space-y-3 font-mono text-xs font-bold">
-                  <div className="flex justify-between">
-                    <span className="opacity-50">STATUS:</span>
-                    <span>ACTIVE &bull; RUNNING SYSTEMS</span>
+              <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+                {/* Profile Photo Frame */}
+                <div className="relative group shrink-0">
+                  <div className="absolute inset-0 bg-black translate-x-2 translate-y-2 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
+                  <div className="relative w-36 h-36 border-4 border-black bg-neutral-200 overflow-hidden flex items-center justify-center">
+                    <img 
+                      src="/avatar.jpg" 
+                      alt="Dev Narayanan" 
+                      className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        const parent = e.currentTarget.parentElement;
+                        if (parent) {
+                          // Clean any existing placeholder first
+                          const existing = parent.querySelector('.photo-placeholder');
+                          if (!existing) {
+                            const placeholder = document.createElement('div');
+                            placeholder.className = "photo-placeholder flex flex-col items-center justify-center p-3 text-center h-full w-full font-mono text-[9px] font-black leading-tight gap-1.5 text-black/60";
+                            placeholder.innerHTML = `
+                              <svg class="w-6 h-6 text-black/40" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                              </svg>
+                              <span>[PHOTO]</span>
+                              <span class="opacity-75">Add your photo at<br/>/public/avatar.jpg</span>
+                            `;
+                            parent.appendChild(placeholder);
+                          }
+                        }
+                      }}
+                    />
                   </div>
-                  <div className="flex justify-between">
-                    <span className="opacity-50">LOCATIONS:</span>
-                    <span>CHENNAI &amp; MANDI, IN</span>
+                </div>
+
+                <div className="space-y-4 flex-1">
+                  <p className="text-sm md:text-base leading-relaxed opacity-90 font-medium">
+                    {profile.bio}
+                  </p>
+
+                  {/* Action Buttons */}
+                  <div className="pt-2 flex flex-wrap gap-4">
+                    <a 
+                      href="#booking" 
+                      className="inline-flex items-center gap-2 border-4 border-black bg-black text-white px-6 py-3 text-xs font-mono font-black uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1"
+                    >
+                      Book A Session <Calendar className="w-4 h-4 ml-1" />
+                    </a>
+                    <a 
+                      href="/resume.pdf" 
+                      download="Dev_Narayanan_Resume.pdf"
+                      className="inline-flex items-center gap-2 border-4 border-black bg-white text-black px-6 py-3 text-xs font-mono font-black uppercase tracking-wider hover:bg-black hover:text-white transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1"
+                    >
+                      Download Resume <FileText className="w-4 h-4 ml-1" />
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Core Contacts Panel (Keep only Digital Directories) */}
-            <div className="p-8 md:p-10 space-y-4 bg-white/50">
+          {/* Right Column (Digital Directories) */}
+          <div className="lg:col-span-5 flex flex-col justify-center p-8 md:p-10 bg-white/30">
+            <div className="space-y-4">
               <span className="text-[10px] font-mono uppercase tracking-widest opacity-50 font-bold block">
                 Digital Directories
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-bold tracking-tight">
+                <a 
+                  href={`https://${profile.linkedin}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 border border-black p-2.5 bg-white/80 hover:bg-black hover:text-white transition-colors duration-300"
+                >
+                  <Linkedin className="w-4 h-4 shrink-0" />
+                  <span>LinkedIn Profile</span>
+                </a>
+                <a 
+                  href={`https://${profile.github}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 border border-black p-2.5 bg-white/80 hover:bg-black hover:text-white transition-colors duration-300"
+                >
+                  <Github className="w-4 h-4 shrink-0" />
+                  <span>GitHub Profile</span>
+                </a>
                 <a 
                   href={`mailto:${profile.email}`}
                   className="flex items-center gap-2 border border-black p-2.5 bg-white/80 hover:bg-black hover:text-white transition-colors duration-300"
@@ -413,33 +425,17 @@ export default function MinimalTemplate({ profile }: MinimalTemplateProps) {
                   <Phone className="w-4 h-4 shrink-0" />
                   <span>+91 {profile.phone}</span>
                 </a>
-                <a 
-                  href={`https://${profile.github}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 border border-black p-2.5 bg-white/80 hover:bg-black hover:text-white transition-colors duration-300"
-                >
-                  <Github className="w-4 h-4 shrink-0" />
-                  <span>GitHub Profile</span>
-                </a>
-                <a 
-                  href={`https://${profile.linkedin}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 border border-black p-2.5 bg-white/80 hover:bg-black hover:text-white transition-colors duration-300"
-                >
-                  <Linkedin className="w-4 h-4 shrink-0" />
-                  <span>LinkedIn Profile</span>
-                </a>
-                {profile.leetcode && (
+                {profile.twitter && (
                   <a 
-                    href={`https://${profile.leetcode}`}
+                    href={`https://${profile.twitter}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 border border-black p-2.5 bg-white/80 hover:bg-black hover:text-white transition-colors duration-300 col-span-1 sm:col-span-2 justify-center"
+                    className="flex items-center gap-2 border border-black p-2.5 bg-white/80 hover:bg-black hover:text-white transition-colors duration-300 sm:col-span-2 justify-center"
                   >
-                    <Code className="w-4 h-4 shrink-0 text-amber-600" />
-                    <span>LeetCode Profile</span>
+                    <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                    <span>X Profile</span>
                   </a>
                 )}
               </div>

@@ -4,13 +4,14 @@ export const PRESETS: Record<string, UserProfile> = {
   developer: {
     name: "Dev Narayanan",
     role: "Backend Developer & ML Engineer",
-    tagline: "Architecting high-concurrency systems and generative ML workflows.",
-    bio: "I design resilient backend architectures, real-time file-sync engines, and low-latency cloud systems. Proficient in concurrent programming, AI engineering, and building distributed service infrastructures.",
+    tagline: "Developing innovative solutions with a passion for exploration.",
+    bio: "I am a developer based in India. I enjoy programming and exploring technology. I've participated in 10+ hackathons & ideathons, and have a passion for building innovative solutions.",
     email: "devnarayananmp@outlook.com",
     phone: "7200176502",
     github: "github.com/devnarayanan0",
     linkedin: "linkedin.com/in/devnarayanan0",
     leetcode: "leetcode.com/devnarayanan0",
+    twitter: "x.com/dev_narayanan0",
     calComUrl: "https://cal.com/devnarayanan0",
     education: [
       {
